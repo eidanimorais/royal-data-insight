@@ -9,9 +9,9 @@ import { DataTable } from "@/components/DataTable";
 
 const Index = () => {
   const [filters, setFilters] = useState<FilterState>({
-    trimestre: "",
-    artista: "",
-    plataforma: "",
+    trimestre: "all_trimestres",
+    artista: "all_artistas",
+    plataforma: "all_plataformas",
   });
 
   const { data: rawData = [], isLoading } = useQuery({
@@ -21,9 +21,9 @@ const Index = () => {
 
   const filteredData = rawData.filter((item) => {
     return (
-      (!filters.trimestre || item.TRIMESTRE === filters.trimestre) &&
-      (!filters.artista || item.ARTISTA === filters.artista) &&
-      (!filters.plataforma || item.PLATAFORMA === filters.plataforma)
+      (filters.trimestre === "all_trimestres" || item.TRIMESTRE === filters.trimestre) &&
+      (filters.artista === "all_artistas" || item.ARTISTA === filters.artista) &&
+      (filters.plataforma === "all_plataformas" || item.PLATAFORMA === filters.plataforma)
     );
   });
 

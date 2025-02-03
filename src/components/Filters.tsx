@@ -28,7 +28,7 @@ export const Filters = ({ data, filters, onFilterChange }: FiltersProps) => {
           <SelectValue placeholder="Selecione o trimestre" />
         </SelectTrigger>
         <SelectContent>
-          <SelectItem value="">Todos os trimestres</SelectItem>
+          <SelectItem value="all_trimestres">Todos os trimestres</SelectItem>
           {trimestres.map((trimestre) => (
             <SelectItem key={trimestre} value={trimestre}>
               {trimestre}
@@ -45,7 +45,7 @@ export const Filters = ({ data, filters, onFilterChange }: FiltersProps) => {
           <SelectValue placeholder="Selecione o artista" />
         </SelectTrigger>
         <SelectContent>
-          <SelectItem value="">Todos os artistas</SelectItem>
+          <SelectItem value="all_artistas">Todos os artistas</SelectItem>
           {artistas.map((artista) => (
             <SelectItem key={artista} value={artista}>
               {artista}
@@ -62,7 +62,7 @@ export const Filters = ({ data, filters, onFilterChange }: FiltersProps) => {
           <SelectValue placeholder="Selecione a plataforma" />
         </SelectTrigger>
         <SelectContent>
-          <SelectItem value="">Todas as plataformas</SelectItem>
+          <SelectItem value="all_plataformas">Todas as plataformas</SelectItem>
           {plataformas.map((plataforma) => (
             <SelectItem key={plataforma} value={plataforma}>
               {plataforma}
